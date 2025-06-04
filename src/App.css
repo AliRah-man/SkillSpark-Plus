@@ -1,299 +1,348 @@
-    /* src/App.css */
+/* src/App.css */
 
-    /* Global HTML and Body Resets */
-    html, body {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box; /* Use border-box model globally for easier layout */
-    }
+/* Global HTML and Body Resets */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Use border-box model globally for easier layout */
+}
 
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern sans-serif font stack */
-        background-color: #e9ecef; /* Lighter background */
-        color: #343a40; /* Darker text for better contrast */
-        line-height: 1.6; /* Improved readability */
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern sans-serif font stack */
+    background-color: #e9ecef; /* Lighter background */
+    color: #343a40; /* Darker text for better contrast */
+    line-height: 1.6; /* Improved readability */
+}
 
-    /* Container for consistent content width */
-    .container {
-        max-width: 1100px; /* Limit content width for readability */
-        margin: 0 auto; /* Center the container horizontally */
-        padding: 0 20px; /* Add horizontal padding to the container content */
-    }
+/* Container for consistent content width */
+.container {
+    max-width: 1100px; /* Limit content width for readability */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Add horizontal padding to the container content */
+}
 
-    /* Heading Styles */
-    h1, h2, h3 {
-        color: #007bff; /* Consistent blue for all headings */
-        margin-bottom: 15px; /* Space below headings */
-    }
+/* Heading Styles */
+h1, h2, h3 {
+    color: #007bff; /* Consistent blue for all headings */
+    margin-bottom: 15px; /* Space below headings */
+}
 
-    h1 {
-        font-size: 3em; /* Larger main heading */
-        text-align: center; /* Center align the text */
-        text-transform: capitalize; /* Capitalize the first letter of each word */
-    }
+h1 {
+    font-size: 3em; /* Larger main heading */
+    text-align: center; /* Center align the text */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+}
 
-    h2 {
-        font-size: 2.5em; /* Slightly smaller for sub-headings */
-        text-align: center; /* Center align the text */
-        margin-top: 40px; /* Space above sub-headings */
-        margin-bottom: 30px; /* Space below sub-headings */
-    }
+h2 {
+    font-size: 2.5em; /* Slightly smaller for sub-headings */
+    text-align: center; /* Center align the text */
+    margin-top: 40px; /* Space above sub-headings */
+    margin-bottom: 30px; /* Space below sub-headings */
+}
 
-    h3 {
-        font-size: 1.8em; /* Size for feature item headings */
-        margin-bottom: 10px; /* Space below h3 */
-    }
+h3 {
+    font-size: 1.8em; /* Size for feature item headings */
+    margin-bottom: 10px; /* Space below h3 */
+}
 
-    /* Paragraph Styles */
-    p {
-        font-size: 1.1em; /* Slightly larger text for paragraphs */
-        line-height: 1.6; /* Improve readability by adding space between lines */
-        margin-bottom: 1em; /* Space below paragraphs */
-    }
+/* Paragraph Styles */
+p {
+    font-size: 1.1em; /* Slightly larger text for paragraphs */
+    line-height: 1.6; /* Improve readability by adding space between lines */
+    margin-bottom: 1em; /* Space below paragraphs */
+}
 
-    /* Header Styles */
-    .main-header {
-        background-color: #ffffff; /* White background for the header */
-        padding: 15px 0; /* Vertical padding */
-        border-bottom: 1px solid #dee2e6; /* Subtle border at the bottom */
-        display: flex; /* Use Flexbox for header content layout */
-        justify-content: space-between; /* Space logo and nav to opposite ends */
-        align-items: center; /* Vertically align items in the center */
-    }
+/* Header Styles */
+.main-header {
+    background-color: #ffffff; /* White background for the header */
+    padding: 15px 0; /* Vertical padding */
+    border-bottom: 1px solid #dee2e6; /* Subtle border at the bottom */
+    display: flex; /* Use Flexbox for header content layout */
+    justify-content: space-between; /* Space logo and nav to opposite ends */
+    align-items: center; /* Vertically align items in the center */
+}
 
+.main-header .container {
+    display: flex; /* Apply flex to inner container for responsiveness */
+    justify-content: space-between; /* Space logo and nav */
+    align-items: center; /* Vertically align items */
+    width: 100%; /* Ensure container takes full width of header */
+}
+
+.logo {
+    height: 150px; /* Control logo size */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures proper sizing and removes extra space below inline images */
+}
+
+.main-header nav ul {
+    list-style: none; /* Remove bullet points from list */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Make nav items display in a row */
+}
+
+.main-header nav ul li {
+    margin-left: 25px; /* Space between navigation items */
+}
+
+.main-header nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #007bff; /* Link color */
+    font-weight: bold; /* Bold text for navigation links */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.main-header nav ul li a:hover {
+    color: #0056b3; /* Darker blue on hover (pseudo-class :hover) */
+}
+
+/* Hero Section Styles */
+.hero-section {
+    /* IMPORTANT: Image path is relative to the public folder root */
+    background: url('/assets/your-hero-image.jpg') no-repeat center center/cover;
+    color: #ffffff; /* White text on hero image */
+    text-align: center; /* Center text within the hero content */
+    padding: 100px 20px; /* Top/bottom padding */
+    min-height: 400px; /* Minimum height for the hero section */
+    display: flex; /* Use flexbox to center content vertically */
+    align-items: center; /* Vertically align content */
+    justify-content: center; /* Horizontally align content */
+    position: relative; /* Needed for positioning the overlay pseudo-element */
+    z-index: 1; /* Ensure content is above the overlay */
+}
+
+.hero-section::before { /* Pseudo-element for a dark overlay on the hero image */
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position relative to .hero-section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: -1; /* Place behind hero content */
+}
+
+.hero-content {
+    max-width: 800px; /* Limit width of content within hero */
+    margin: 0 auto; /* Center hero content */
+    z-index: 2; /* Ensure hero content is above the overlay */
+}
+
+.hero-content h1 {
+    font-size: 4em; /* Larger heading for hero */
+    margin-bottom: 20px; /* Space below heading */
+    color: #ffffff; /* White heading on hero */
+}
+
+.hero-content p {
+    font-size: 1.5em; /* Larger paragraph for hero */
+    margin-bottom: 30px; /* Space below paragraph */
+    color: #ffffff; /* White paragraph on hero */
+}
+
+.btn-primary {
+    display: inline-block; /* Allows padding and margin like a block, but stays inline */
+    background-color: #28a745; /* Green button */
+    color: white; /* White text */
+    padding: 15px 30px; /* Padding inside the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Main Content Features Section */
+.main-content {
+    padding: 40px 20px; /* Padding for the main content area */
+    background-color: #ffffff; /* White background for main content */
+    border-radius: 8px; /* Rounded corners for the content box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 30px; /* Space above main content */
+    margin-bottom: 30px; /* Space below main content */
+}
+
+.features {
+    display: flex; /* Use Flexbox for feature items */
+    justify-content: space-around; /* Distribute items with space around them */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 20px; /* Space between flex items (both row and column gap) */
+    margin-top: 30px; /* Space above features container */
+}
+
+.feature-item {
+    flex: 1; /* Allow items to grow and shrink (flexible sizing) */
+    min-width: 280px; /* Minimum width before wrapping to next line */
+    background-color: #f8f9fa; /* Light gray background for feature items */
+    padding: 25px; /* Padding inside feature items */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center text within feature item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* Lift up slightly on hover */
+}
+
+.feature-item h3 {
+    color: #007bff; /* Consistent blue for feature headings */
+    margin-bottom: 10px; /* Space below h3 in feature item */
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #ffffff; /* White text */
+    text-align: center; /* Center text */
+    padding: 20px 0; /* Vertical padding */
+    font-size: 0.9em; /* Slightly smaller font size */
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    max-width: 1100px; /* Match your .container width */
+    position: relative; /* Essential for positioning dots and fade effect */
+    margin: 30px auto; /* Center the slideshow with margin */
+    overflow: hidden; /* Hide parts of the image outside the container */
+    border-radius: 8px; /* Consistent rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.slideshow-image { /* Class for the slideshow image */
+    width: 100%; /* Make image fill the container */
+    height: 500px; /* Fixed height for slideshow images */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    display: block; /* Remove extra space below image */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+}
+
+/* Fade Effect Classes for JavaScript manipulation */
+/* These classes are for a basic fade; more advanced might involve multiple images */
+.fade {
+    opacity: 0; /* Initially hidden */
+}
+
+.fade.show {
+    opacity: 1; /* Fully visible */
+}
+
+/* Slideshow Dots (Navigation) */
+.slideshow-dots {
+    text-align: center; /* Center the dots */
+    padding: 10px 0; /* Vertical padding */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for dots */
+    position: absolute; /* Position dots over the image */
+    bottom: 0; /* Align to the bottom */
+    left: 0;
+    right: 0;
+    z-index: 2; /* Ensure dots are above image */
+    border-bottom-left-radius: 8px; /* Match container border-radius */
+    border-bottom-right-radius: 8px; /* Match container border-radius */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px; /* Space between dots */
+    background-color: #bbb; /* Default dot color */
+    border-radius: 50%; /* Make it round */
+    display: inline-block; /* Arrange dots horizontally */
+    transition: background-color 0.6s ease; /* Smooth transition for active state */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.dot.active {
+    background-color: #717171; /* Active dot color */
+}
+
+/* Application and Inquiry Form Styles */
+.application-form,
+.inquiry-form { /* Apply same styles to both forms */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limit form width */
+    margin: 30px auto; /* Center the form */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form fields */
+}
+
+.form-group label {
+    display: block; /* Make labels take full width */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"], /* Added for phone number input */
+.form-group textarea,
+.form-group select {
+    width: 100%; /* Make inputs take full width of their container */
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+/* Basic Responsive Adjustments (using @media for smaller screens) */
+@media (max-width: 768px) {
     .main-header .container {
-        display: flex; /* Apply flex to inner container for responsiveness */
-        justify-content: space-between; /* Space logo and nav */
-        align-items: center; /* Vertically align items */
-        width: 100%; /* Ensure container takes full width of header */
-    }
-
-    .logo {
-        height: 60px; /* Control logo size */
-        width: auto; /* Maintain aspect ratio */
-        display: block; /* Ensures proper sizing and removes extra space below inline images */
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: center; /* Center items when stacked */
     }
 
     .main-header nav ul {
-        list-style: none; /* Remove bullet points from list */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        display: flex; /* Make nav items display in a row */
+        margin-top: 15px; /* Space between stacked logo and nav */
     }
 
     .main-header nav ul li {
-        margin-left: 25px; /* Space between navigation items */
-    }
-
-    .main-header nav ul li a {
-        text-decoration: none; /* Remove underline from links */
-        color: #007bff; /* Link color */
-        font-weight: bold; /* Bold text for navigation links */
-        transition: color 0.3s ease; /* Smooth transition for hover effect */
-    }
-
-    .main-header nav ul li a:hover {
-        color: #0056b3; /* Darker blue on hover (pseudo-class :hover) */
-    }
-
-    /* Hero Section Styles */
-    .hero-section {
-        /* IMPORTANT: Image path is relative to the public folder root */
-        background: url('/assets/your-hero-image.jpg') no-repeat center center/cover;
-        color: #ffffff; /* White text on hero image */
-        text-align: center; /* Center text within the hero content */
-        padding: 100px 20px; /* Top/bottom padding */
-        min-height: 400px; /* Minimum height for the hero section */
-        display: flex; /* Use flexbox to center content vertically */
-        align-items: center; /* Vertically align content */
-        justify-content: center; /* Horizontally align content */
-        position: relative; /* Needed for positioning the overlay pseudo-element */
-        z-index: 1; /* Ensure content is above the overlay */
-    }
-
-    .hero-section::before { /* Pseudo-element for a dark overlay on the hero image */
-        content: ''; /* Required for pseudo-elements */
-        position: absolute; /* Position relative to .hero-section */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-        z-index: -1; /* Place behind hero content */
-    }
-
-    .hero-content {
-        max-width: 800px; /* Limit width of content within hero */
-        margin: 0 auto; /* Center hero content */
-        z-index: 2; /* Ensure hero content is above the overlay */
+        margin: 0 10px; /* Adjust horizontal spacing for stacked nav items */
     }
 
     .hero-content h1 {
-        font-size: 4em; /* Larger heading for hero */
-        margin-bottom: 20px; /* Space below heading */
-        color: #ffffff; /* White heading on hero */
+        font-size: 2.5em; /* Smaller hero heading on small screens */
     }
 
     .hero-content p {
-        font-size: 1.5em; /* Larger paragraph for hero */
-        margin-bottom: 30px; /* Space below paragraph */
-        color: #ffffff; /* White paragraph on hero */
-    }
-
-    .btn-primary {
-        display: inline-block; /* Allows padding and margin like a block, but stays inline */
-        background-color: #28a745; /* Green button */
-        color: white; /* White text */
-        padding: 15px 30px; /* Padding inside the button */
-        text-decoration: none; /* Remove underline */
-        border-radius: 5px; /* Slightly rounded corners */
-        font-weight: bold; /* Bold text */
-        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    }
-
-    .btn-primary:hover {
-        background-color: #218838; /* Darker green on hover */
-    }
-
-    /* Main Content Features Section */
-    .main-content {
-        padding: 40px 20px; /* Padding for the main content area */
-        background-color: #ffffff; /* White background for main content */
-        border-radius: 8px; /* Rounded corners for the content box */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        margin-top: 30px; /* Space above main content */
-        margin-bottom: 30px; /* Space below main content */
+        font-size: 1.2em; /* Smaller hero paragraph on small screens */
     }
 
     .features {
-        display: flex; /* Use Flexbox for feature items */
-        justify-content: space-around; /* Distribute items with space around them */
-        flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
-        gap: 20px; /* Space between flex items (both row and column gap) */
-        margin-top: 30px; /* Space above features container */
+        flex-direction: column; /* Stack features vertically */
+        align-items: center; /* Center feature items when stacked */
     }
 
     .feature-item {
-        flex: 1; /* Allow items to grow and shrink (flexible sizing) */
-        min-width: 280px; /* Minimum width before wrapping to next line */
-        background-color: #f8f9fa; /* Light gray background for feature items */
-        padding: 25px; /* Padding inside feature items */
-        border-radius: 8px; /* Rounded corners */
-        text-align: center; /* Center text within feature item */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-        transition: transform 0.3s ease; /* Smooth transform on hover */
-    }
-
-    .feature-item:hover {
-        transform: translateY(-5px); /* Lift up slightly on hover */
-    }
-
-    .feature-item h3 {
-        color: #007bff; /* Consistent blue for feature headings */
-        margin-bottom: 10px; /* Space below h3 in feature item */
-    }
-
-    /* Footer Styles */
-    .main-footer {
-        background-color: #343a40; /* Dark background for footer */
-        color: #ffffff; /* White text */
-        text-align: center; /* Center text */
-        padding: 20px 0; /* Vertical padding */
-        font-size: 0.9em; /* Slightly smaller font size */
-    }
-
-    /* Slideshow Styles */
-    .slideshow-container {
-        max-width: 1100px; /* Match your .container width */
-        position: relative; /* Essential for positioning dots and fade effect */
-        margin: 30px auto; /* Center the slideshow with margin */
-        overflow: hidden; /* Hide parts of the image outside the container */
-        border-radius: 8px; /* Consistent rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        width: 90%; /* Take up more width when stacked */
+        min-width: unset; /* Remove min-width constraint to allow full stacking */
     }
 
     .slideshow-image { /* Class for the slideshow image */
-        width: 100%; /* Make image fill the container */
-        height: 500px; /* Fixed height for slideshow images */
-        object-fit: cover; /* Ensures image covers the area without distortion */
-        display: block; /* Remove extra space below image */
-        transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+        height: 300px; /* Smaller height for slideshow on mobile */
     }
 
-    /* Fade Effect Classes for JavaScript manipulation */
-    .fade {
-        opacity: 0; /* Initially hidden */
+    .application-form,
+    .inquiry-form {
+        padding: 20px; /* Reduce padding on smaller screens */
     }
-
-    .fade.show {
-        opacity: 1; /* Fully visible */
-    }
-
-    /* Slideshow Dots (Navigation) */
-    .slideshow-dots {
-        text-align: center; /* Center the dots */
-        padding: 10px 0; /* Vertical padding */
-        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for dots */
-        position: absolute; /* Position dots over the image */
-        bottom: 0; /* Align to the bottom */
-        left: 0;
-        right: 0;
-        z-index: 2; /* Ensure dots are above image */
-        border-bottom-left-radius: 8px; /* Match container border-radius */
-        border-bottom-right-radius: 8px; /* Match container border-radius */
-    }
-
-    .dot {
-        height: 15px;
-        width: 15px;
-        margin: 0 5px; /* Space between dots */
-        background-color: #bbb; /* Default dot color */
-        border-radius: 50%; /* Make it round */
-        display: inline-block; /* Arrange dots horizontally */
-        transition: background-color 0.6s ease; /* Smooth transition for active state */
-        cursor: pointer; /* Indicate it's clickable */
-    }
-
-    .dot.active {
-        background-color: #717171; /* Active dot color */
-    }
-
-    /* Basic Responsive Adjustments (using @media for smaller screens) */
-    @media (max-width: 768px) {
-        .main-header .container {
-            flex-direction: column; /* Stack logo and nav vertically */
-            align-items: center; /* Center items when stacked */
-        }
-
-        .main-header nav ul {
-            margin-top: 15px; /* Space between stacked logo and nav */
-        }
-
-        .main-header nav ul li {
-            margin: 0 10px; /* Adjust horizontal spacing for stacked nav items */
-        }
-
-        .hero-content h1 {
-            font-size: 2.5em; /* Smaller hero heading on small screens */
-        }
-
-        .hero-content p {
-            font-size: 1.2em; /* Smaller hero paragraph on small screens */
-        }
-
-        .features {
-            flex-direction: column; /* Stack features vertically */
-            align-items: center; /* Center feature items when stacked */
-        }
-
-        .feature-item {
-            width: 90%; /* Take up more width when stacked */
-            min-width: unset; /* Remove min-width constraint to allow full stacking */
-        }
-
-        .slideshow-image { /* Class for the slideshow image */
-            height: 300px; /* Smaller height for slideshow on mobile */
-        }
-    }
-    
+}
