@@ -10,7 +10,7 @@ function ApplyPage() {
   const [message, setMessage] = useState(''); // NEW: Message/comments state
 
   // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default browser form submission (page reload)
 
     // Basic validation (client-side)
@@ -19,23 +19,44 @@ function ApplyPage() {
       return; // Stop submission if validation fails
     }
 
-    console.log('Application Form Submitted!', {
-      fullName,
-      email,
-      phone,
-      courseInterest,
-      message,
-    });
+    try {
+      // Send data to your backend
+      const response = await fetch('http://localhost:5000/api/applicants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName,
+          email,
+          phone,
+          courseInterest,
+          message,
+        }),
+      });
 
-    alert('Application Submitted! Thank you for your interest.'); // Using alert for now
-    // Later: This is where you would send the data to your backend (MongoDB/Express.js)
+      const result = await response.json();
 
-    // Reset form fields after submission
-    setFullName('');
-    setEmail('');
-    setPhone('');
-    setCourseInterest('');
-    setMessage('');
+      if (response.ok) {
+        alert('Application Submitted Successfully! Thank you for your interest.');
+        console.log('Success:', result);
+        
+        // Reset form fields after successful submission
+        setFullName('');
+        setEmail('');
+        setPhone('');
+        setCourseInterest('');
+        setMessage('');
+      } else {
+        // Handle server errors (like duplicate email)
+        alert(`Error: ${result.message}`);
+        console.error('Server error:', result);
+      }
+    } catch (error) {
+      // Handle network errors
+      alert('Network error. Please check if your backend server is running.');
+      console.error('Network error:', error);
+    }
   };
 
   return (

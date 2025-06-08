@@ -7,7 +7,7 @@ function InquiryFormPage() {
   const [subject, setSubject] = useState('');
   const [inquiryMessage, setInquiryMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent page reload
 
     // Basic validation
@@ -16,21 +16,42 @@ function InquiryFormPage() {
       return;
     }
 
-    console.log('Inquiry Form Submitted!', {
-      name,
-      email,
-      subject,
-      inquiryMessage,
-    });
+    try {
+      // Send data to your backend
+      const response = await fetch('http://localhost:5000/api/inquiries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          inquiryMessage,
+        }),
+      });
 
-    alert('Your inquiry has been submitted! We will get back to you soon.'); // Using alert for now
-    // Later: Send this data to your backend
+      const result = await response.json();
 
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setSubject('');
-    setInquiryMessage('');
+      if (response.ok) {
+        alert('Your inquiry has been submitted successfully! We will get back to you soon.');
+        console.log('Success:', result);
+        
+        // Reset form fields after successful submission
+        setName('');
+        setEmail('');
+        setSubject('');
+        setInquiryMessage('');
+      } else {
+        // Handle server errors
+        alert(`Error: ${result.message}`);
+        console.error('Server error:', result);
+      }
+    } catch (error) {
+      // Handle network errors
+      alert('Network error. Please check if your backend server is running.');
+      console.error('Network error:', error);
+    }
   };
 
   return (
