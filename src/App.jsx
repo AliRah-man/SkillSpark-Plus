@@ -2,20 +2,15 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// Removed the import statement for skillsparkLogo as it's now directly referenced from public/assets
-// import skillsparkLogo from '/assets/skillspark-logo.png'; // This line is not needed and can be deleted or kept commented
-
 import HomePage from './HomePage';
-// import Slideshow from './Slideshow'; // If HomePage imports Slideshow, you don't need this here
 import ApplyPage from './ApplyPage';
 import InquiryFormPage from './InquiryFormPage';
-import CoursesPage from './CoursesPage'; // Import CoursesPage
-import AboutUsPage from './AboutUsPage'; // Import AboutUsPage
+import CoursesPage from './CoursesPage';
+import AboutUsPage from './AboutUsPage';
 
 
 function App() {
-  // Add 'courses' and 'about' to your possible currentPage states
-  const [currentPage, setCurrentPage] = useState('home'); // 'home', 'apply', 'inquiry', 'courses', 'about'
+  const [currentPage, setCurrentPage] = useState('home');
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
@@ -26,8 +21,11 @@ function App() {
       {/* Header Section */}
       <header className="main-header">
           <div className="container">
-              {/* UPDATED: Directly referencing the logo from the public folder root */}
-              <img src="/skillspark-logo.png" alt="SkillSpark Plus Logo" className="logo" />
+              {/* NEW: Wrapper div for logo image and text */}
+              <div className="logo-group">
+                  <img src="/skillspark-logo.png" alt="SkillSpark Plus Logo" className="logo" />
+                  <span className="logo-text">SkillSpark</span> {/* NEW: Text next to logo */}
+              </div>
               <nav>
                   <ul>
                       <li><a href="#" onClick={() => handleNavClick('home')}>Home</a></li>

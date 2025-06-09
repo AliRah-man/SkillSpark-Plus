@@ -56,7 +56,7 @@ p {
 /* Header Styles */
 .main-header {
     background-color: #ffffff; /* White background for the header */
-    padding: 15px 0; /* Vertical padding */
+    padding: 10px 0; /* Adjusted vertical padding for better balance with smaller logo */
     border-bottom: 1px solid #dee2e6; /* Subtle border at the bottom */
     display: flex; /* Use Flexbox for header content layout */
     justify-content: space-between; /* Space logo and nav to opposite ends */
@@ -70,11 +70,28 @@ p {
     width: 100%; /* Ensure container takes full width of header */
 }
 
+.logo-group { /* Flex container for logo image and text */
+    display: flex; /* Use flexbox to align logo and text horizontally */
+    align-items: center; /* Vertically align items in the center */
+}
+
 .logo {
-    height: 150px; /* User-defined logo size */
+    height: 120px; /* ADJUSTED LOGO SIZE: Increased further for prominence */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Ensures proper sizing and removes extra space below inline images */
+    margin-left: 10px; /* Optional: add a little margin to the left of the logo for visual spacing */
 }
+
+.logo-text { /* Styling for the text next to logo */
+    font-size: 2.5em; /* Adjusted text size for better balance with larger logo */
+    font-weight: bold;
+    color: black; /* SkillSpark blue color */
+    margin-left: 15px; /* Increased space between logo image and text for clarity */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Ensure text is vertically centered with logo */
+    line-height: 1; /* Helps with vertical alignment of text */
+}
+
 
 .main-header nav ul {
     list-style: none; /* Remove bullet points from list */
@@ -89,9 +106,13 @@ p {
 
 .main-header nav ul li a {
     text-decoration: none; /* Remove underline from links */
-    color: #000000; /* CHANGED TO BLACK for navigation links */
+    color: #000000; /* BLACK for navigation links */
     font-weight: bold; /* Bold text for navigation links */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em; /* Ensure consistent font size */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
+    padding: 5px 0; /* Add slight vertical padding for click area */
+    display: block; /* Make the whole link area clickable */
 }
 
 .main-header nav ul li a:hover {
@@ -180,9 +201,9 @@ p {
     min-width: 280px; /* Minimum width before wrapping to next line */
     background-color: #f8f9fa; /* Light gray background for feature items */
     padding: 25px; /* Padding inside feature items */
-    border-radius: 8px; /* Rounded corners */
-    text-align: center; /* Center text within feature item */
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    text-align: center; /* Center text within feature item */
     transition: transform 0.3s ease; /* Smooth transform on hover */
 }
 
@@ -191,7 +212,7 @@ p {
 }
 
 .feature-item h3 {
-    color: #343a40; /* CHANGED TO DARK GREY for feature headings */
+    color: #343a40; /* DARK GREY for feature headings */
     margin-bottom: 10px; /* Space below h3 in feature item */
 }
 
@@ -342,7 +363,7 @@ p {
 }
 
 .course-item h3 {
-    color: #343a40; /* CHANGED TO DARK GREY for course item headings */
+    color: #343a40; /* DARK GREY for course item headings */
     margin-bottom: 15px;
     text-align: center; /* Center course titles */
 }
