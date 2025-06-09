@@ -23,10 +23,11 @@ body {
 
 /* Heading Styles */
 h1, h2, h3 {
-    color: #007bff; /* Consistent blue for all headings */
+    color: #343a40; /* CHANGED TO DARK GREY FOR ALL HEADINGS (except specific overrides below) */
     margin-bottom: 15px; /* Space below headings */
 }
 
+/* Specific H1 and H2 adjustments */
 h1 {
     font-size: 3em; /* Larger main heading */
     text-align: center; /* Center align the text */
@@ -70,7 +71,7 @@ p {
 }
 
 .logo {
-    height: 150px; /* Control logo size */
+    height: 150px; /* User-defined logo size */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Ensures proper sizing and removes extra space below inline images */
 }
@@ -88,13 +89,13 @@ p {
 
 .main-header nav ul li a {
     text-decoration: none; /* Remove underline from links */
-    color: #007bff; /* Link color */
+    color: #000000; /* CHANGED TO BLACK for navigation links */
     font-weight: bold; /* Bold text for navigation links */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .main-header nav ul li a:hover {
-    color: #0056b3; /* Darker blue on hover (pseudo-class :hover) */
+    color: #333333; /* Darker grey on hover for black text */
 }
 
 /* Hero Section Styles */
@@ -132,7 +133,7 @@ p {
 .hero-content h1 {
     font-size: 4em; /* Larger heading for hero */
     margin-bottom: 20px; /* Space below heading */
-    color: #ffffff; /* White heading on hero */
+    color: #ffffff; /* Kept white for contrast on dark hero background */
 }
 
 .hero-content p {
@@ -190,7 +191,7 @@ p {
 }
 
 .feature-item h3 {
-    color: #007bff; /* Consistent blue for feature headings */
+    color: #343a40; /* CHANGED TO DARK GREY for feature headings */
     margin-bottom: 10px; /* Space below h3 in feature item */
 }
 
@@ -222,7 +223,6 @@ p {
 }
 
 /* Fade Effect Classes for JavaScript manipulation */
-/* These classes are for a basic fade; more advanced might involve multiple images */
 .fade {
     opacity: 0; /* Initially hidden */
 }
@@ -301,6 +301,95 @@ p {
     border-color: #007bff; /* Highlight on focus */
     outline: none; /* Remove default outline */
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Form Submission Feedback Messages */
+.success-message {
+    color: #28a745; /* Green for success */
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error-message {
+    color: #dc3545; /* Red for error */
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Courses Page Grid and Items */
+.course-grid {
+    display: grid; /* Use CSS Grid for courses layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid columns */
+    gap: 30px; /* Space between grid items */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.course-item {
+    background-color: #f8f9fa; /* Light background for course items */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Align text to the left within the item */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.course-item:hover {
+    transform: translateY(-5px); /* Lift up slightly on hover */
+}
+
+.course-item h3 {
+    color: #343a40; /* CHANGED TO DARK GREY for course item headings */
+    margin-bottom: 15px;
+    text-align: center; /* Center course titles */
+}
+
+.course-item p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: left; /* Ensure paragraphs are left aligned */
+}
+
+.course-item ul {
+    list-style: disc inside; /* Bullet points for list items */
+    margin-bottom: 15px;
+    padding-left: 20px; /* Indent list */
+    color: #555;
+    font-size: 0.9em;
+}
+
+.course-item ul li {
+    margin-bottom: 5px;
+}
+
+/* Adjust button for course items */
+.course-item .btn-primary {
+    display: block; /* Make button take full width of course item */
+    width: fit-content; /* Adjust to content width */
+    margin: 0 auto; /* Center the button */
+    padding: 10px 20px;
+    font-size: 0.9em;
+}
+
+/* About Us List Styling */
+.values-list {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.values-list li {
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #007bff; /* Kept blue border for emphasis */
+    border-radius: 5px;
+    font-size: 1.05em;
 }
 
 
